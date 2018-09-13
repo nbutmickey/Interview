@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 判断回文数
+    let number=12321;
+    function test(number) {
+        let reverseNUmber=Number(number.toString().split("").reverse().join(""));
+        // 对于一个整数，首先将其转化为字符串类型，然后分割成数组，对数组进行反转，将数组转化成字符串，最后转化为Number型
+        if(reverseNUmber===number){
+            console.log("该数为回文数");
+        }else{
+            console.log("该数非回文数");
+        }
+    }
+    //执行
+    test(number);
+
+    //数组去重
+    let a=[1,2,2,3,3,5,9,10]
+    function removeRepeat(arrs) {
+        if(arrs.length<1){
+            return arrs.length;
+        }
+        let returnArr=[arrs[0]];    //自定义一个结果数组
+        for(let i=1;i<arrs.length;i++){  //从第二项开始循环遍历数组
+            // 如果两个数相等，则证明存在重复，否则将数写入结果数组
+            if(arrs[i]!==returnArr[returnArr.length-1]){
+                returnArr.push(arrs[i]);
+            }
+        }
+        return returnArr.length;
+    }
+    //执行
+    console.log(removeRepeat(a));
+</script>
+</body>
+</html>
